@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ViewdetailbooksPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detail Buku</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div let *ngFor="let item of books">
+   <ion-list>
+     <ion-item>
+         Nama Buku : {{item.namabuku}}
+     </ion-item>
+     <ion-item>
+         Penerbit : {{item.penerbit}}
+     </ion-item>
+     <ion-item>
+         Penulis : {{item.namapenulis}}
+     </ion-item>
+     <ion-item>
+         Tahun terbit : {{item.tahunterbit}}
+     </ion-item>
+     <ion-item>
+         Deskripsi Singkat : {{item.deskripsisingkat}}
+     </ion-item>
+   </ion-list>
+  </div>
+</ion-content>

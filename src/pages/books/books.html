@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      List Book
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor='let item of arraybook'>
+    <ion-card-header>
+
+    </ion-card-header>
+    <ion-card-content>
+      <h1 style="text-align:center;">{{item.namabuku}}</h1>
+       <br>
+       Penulis : {{item.namapenulis}}
+       <br>
+       Penerbit : {{item.penerbit}}
+       <br>
+       <ion-badge  color="secondary"item-end>{{item.status}}</ion-badge>
+       <br>
+    </ion-card-content>
+      <button ion-button outline item-end icon-left (click)="borrowbooks()">
+          <ion-icon name="cart"></ion-icon>
+           Pinjam
+        </button>
+        <button ion-button outline item-end icon-left (click)="goToOtherPage(item)">
+          <ion-icon name="eye"></ion-icon>
+           Lihat Detail
+        </button>
+  </ion-card>
+</ion-content>
