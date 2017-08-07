@@ -22,13 +22,13 @@ export class AuthenticationProvider {
     /* fungsi ini ngepost data email dan password di api apakah ada. di api akan di cek datanya
        lalu di return hasilnya dan di convert ke JSON
     */
-    return this.http.post('http://localhost:3000/users/login',body,options).map(res => res.json());
+    return this.http.post('https://pinjambukuapi.herokuapp.com/users/login',body,options).map(res => res.json());
   }
   register(data){
     let header = new Headers({'content-Type':'application/json'});
     let options = new RequestOptions({headers:header});
     let body = JSON.stringify(data);
-    return this.http.post('http://localhost:3000/users',body,options).map(res => res);
+    return this.http.post('https://pinjambukuapi.herokuapp.com/users',body,options).map(res => res);
 
   }
 }

@@ -55,8 +55,9 @@ export class LoginPage {
         if(val == null){
          return this.gettoast();
         }else{
-           localStorage.setItem('users',JSON.stringify(val));
+          localStorage.setItem('token',JSON.stringify(val.token))
           this.navCtrl.setRoot(TabsPage);
+         // console.log(JSON.parse(localStorage.getItem('token')));
         }
        });
     //

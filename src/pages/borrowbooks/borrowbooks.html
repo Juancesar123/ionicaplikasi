@@ -11,8 +11,6 @@
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
   <ion-item>
     <ion-label>Nama</ion-label>
@@ -35,6 +33,16 @@
     <ion-input type="date"  [(ngModel)]="tanggal"></ion-input>
   </ion-item>
   <ion-item>
+     <ion-card>
+    <ion-card-content>
+     Upload Bukti TRF
+      <button ion-button (click)="takePicture()">Take a Picture</button>
+
+      Preview Picture:
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-card-content>
+  </ion-card>
     <button ion-button (click)="simpandata()">Submit</button>
+
   </ion-item>
 </ion-content>

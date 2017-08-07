@@ -7,12 +7,12 @@ import { NavController,ToastController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
-  nama:String;
+  token:String;
   ngOnInit(){
     /* ini adalah untuk parse dari json.stringify di local storage ke data json 
        localstorage.getitem('users') get data dari localsotrage yang sudah di simpan
     */
-    this.nama = JSON.parse(localStorage.getItem('users'));
+    this.token = JSON.parse(localStorage.getItem('token'));
   }
   constructor(public navCtrl: NavController) {
 

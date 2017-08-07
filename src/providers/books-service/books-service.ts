@@ -12,15 +12,19 @@ import 'rxjs/add/operator/map';
 export class BooksServiceProvider {
   constructor(public http: Http) {}
    getdata(){
-      return this.http.get('http://localhost:3000/books').map(res=> res.json());
+      let header = new Headers({'x-access-token':JSON.parse(localStorage.getItem('token'))});
+      let options = new RequestOptions({headers:header});
+      return this.http.get('https://pinjambukuapi.herokuapp.com/books',options).map(res=> res.json());
     }
     simpandata(data){
-      let header = new Headers({'content-Type':'application/json'});
+      let header = new Headers({'content-Type':'application/json','x-access-token':JSON.parse(localStorage.getItem('token'))});
       let options = new RequestOptions({headers:header});
       let body = JSON.stringify(data);
-      return this.http.post('http://localhost:3000/borrowbooks',body,options).map((res=>console.log(res)));
+      return this.http.post('https://pinjambukuapi.herokuapp.com/borrowbooks',body,options).map((res=>console.log(res)));
     }
     getdetailbooks(id){
-      return this.http.get('http://localhost:3000/books/getdetail/'+id).map(res => res.json());
+      let header = new Headers({'x-access-token':JSON.parse(localStorage.getItem('token'))});
+      let options = new RequestOptions({headers:header});
+      return this.http.get('https://pinjambukuapi.herokuapp.com/books/getdetail/'+id,options).map(res => res.json());
     }
 }
